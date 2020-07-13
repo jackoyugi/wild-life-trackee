@@ -29,8 +29,13 @@ public class App {
             model.put("allAnimals", Animal.all());
             model.put("allEndangered", EndangeredAnimal.all());
             model.put("allSightings", Sighting.all());
-            return new ModelAndView(model, "index.hbs");
+            return new ModelAndView(model, "dashboard.hbs");
         }, new HandlebarsTemplateEngine());
+
+        get("/new-animal", (req, res)->{
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "new-animal.hbs");
+        },  new HandlebarsTemplateEngine());
 
 
     }
