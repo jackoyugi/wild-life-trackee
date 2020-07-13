@@ -24,6 +24,14 @@ public class App {
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
+        get("/dashboard", (req, res)-> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("allAnimals", Animal.all());
+            model.put("allEndangered", EndangeredAnimal.all());
+            model.put("allSightings", Sighting.all());
+            return new ModelAndView(model, "index.hbs");
+        }, new HandlebarsTemplateEngine());
+
 
     }
 }

@@ -1,0 +1,77 @@
+{{#partial "content"}}
+    <div class="dash">
+        <h1>
+        <span>Wildlife Tracker dashboard</span>
+        <a href="/"></a></h1>
+        <div class="starts">
+            <div class="left-sec">
+                <h3>Tracked Animals</h3>
+                {{#each allSightings}}
+                    <div>
+                        <p>Animal{{name}}Seen</p>
+                        <p>Location{{location}}</p>
+                        <p>By Ranger{{ranger}}</p>
+                    </div>
+                {{/each}}
+                <div>
+                    <p>Owl Seen</p>
+                    <p>Zone D</p>
+                    <p>By Ranger Jack Wonder</p>
+                </div>
+            </div>
+            <div class="right-sec">
+                <div>
+                    <p><span class="track" data-value="500">500</span>K <br> Number of tracked animals</p>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <p><span class="money">500</span>K <br> Total amount saved by tracking</p>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="graphs">
+            <div class="graph1">Tracked</div>
+            <div class="graph2">Rescued</div>
+            <div class="graph3">Saved</div>
+        </div>
+    </div>
+    <div class="recorded">
+        <div class="text-center"><span class="text=center">Recorded Animals</span></div>
+        <div>
+            <h1><span>Normal</span></h1>
+            {{#each allAnimals}}
+                <div>
+                    <p>Name: {{name}}</p>
+                    <p>Id: {{id}}</p>
+                </div>
+            {{/each}}
+            <div>
+                <div>
+                    <h1><span>Endangered</span></h1>
+                    {{#each allEndangered}}
+                        <div>
+                            <p>Name:{{name}}</p>
+                            <p>Health:{{health}}</p>
+                            <p>Age: {{age}}</p>
+                            <p>Status:{{status}}</p>
+                            <p>Size:{{old}}</p>
+                            <p>Id:{{id}}</p>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{#partial "script"}}
+        <script src="/js/jquery-3.4.0.min.js"></script>
+        <script src="/js/script.js"></script>
+    {{/partial}}
+{{/partial}}
+{{> layout.hbs}}
