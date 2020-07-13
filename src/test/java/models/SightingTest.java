@@ -78,7 +78,7 @@ public class SightingTest {
         assertEquals(savedSighting.getAnimalId(), testAnimal.getId());
     }
     @Test
-    public void getSightings_retrievesAllSightingsFromDatabase_sightingList(){
+    public void getSightings_retrievesAllSightingsFromDatabase_sightingList() throws Exception{
         Animal testAnimal = new Animal ("kwach", 1, "stable");
         testAnimal.save();
         Sighting firstSighting = new Sighting(testAnimal.getId(), "kodera", "jackwonder");

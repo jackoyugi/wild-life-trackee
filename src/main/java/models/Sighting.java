@@ -33,6 +33,9 @@ public class Sighting {
                     .addParameter("id", id)
                     .executeAndFetchFirst(Sighting.class);
             return sighting;
+        }catch (IndexOutOfBoundsException ex){
+            System.out.println("we are sorry for that");
+            return null;
         }
     }
 

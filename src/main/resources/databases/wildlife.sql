@@ -13,3 +13,10 @@ CREATE TABLE IF NOT EXISTS sightings(
     location VARCHAR,
     ranger VARCHAR,
 );
+CREATE TABLE IF NOT EXISTS endangeredanimals(
+    id SERIAL PRIMARY KEY,
+    animalId INTEGER,
+    name VARCHAR,
+    status VARCHAR,
+    old VARCHAR,
+);
