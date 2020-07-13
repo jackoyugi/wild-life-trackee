@@ -1,0 +1,495 @@
+@font-face {
+  font-family: ennobled;
+  src: url(/fonts/Cyttah-Splatter.otf)
+}
+
+@font-face {
+  font-family: Bodoni;
+  src: url(/fonts/BodoniFLF-Roman.ttf)
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+}
+.text-center{
+  width: 100%;
+  text-align: center;
+}
+.btn{
+  background: black;
+  padding: 10px 40px;
+  margin-top: 20px;
+  display: inline-block;
+  color:rgb(203, 73, 41);
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+.light{
+  color: white;
+  background:rgb(203, 73, 41);
+}
+.btn:hover{
+  background: rgba(255, 255, 255, 0.664);
+  color: black;
+  box-shadow: 0 0 10px rgb(136, 134, 134);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*------------------------------------
+			SCROLL BAR
+---------------------------------------*/
+body::-webkit-scrollbar{
+  width: 4px;
+  background-color: rgb(119, 119, 117);
+}
+body::-webkit-scrollbar-thumb{
+  background-color: rgb(203, 73, 41);
+  border-radius: 30px;
+}
+.left-sec::-webkit-scrollbar{
+  width: 2px;
+  background-color: rgb(119, 119, 117);
+}
+.left-sec::-webkit-scrollbar-thumb{
+  background-color: rgb(203, 73, 41);
+  border-radius: 30px;
+}
+
+
+.land-page h1 {
+  font-family: Bodoni;
+  padding: 10px 20px;
+  font-size: 2.5em;
+  color: rgb(203, 73, 41);
+  letter-spacing: 10px;
+}
+
+nav {
+  float: right;
+  padding: 20px 10px;
+}
+
+nav>a {
+  color: rgb(203, 73, 41);
+  font-size: 1.5em;
+  display: inline-block;
+  position: relative;
+  padding: 4px 20px;
+}
+
+nav>a::before,
+nav>a::after {
+  content: "[";
+  font-size: 1.6em;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: -6px;
+  left: 0%;
+}
+
+nav>a::after {
+  content: "]";
+}
+
+nav>a:hover {
+  color: rgba(221, 221, 221, 0.623);
+}
+
+nav>a:hover::after {
+  left: 90%;
+}
+
+#home {
+  background: rgb(21, 21, 34) url(/img/owl.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.land-page {
+  min-height: 100vh;
+}
+.message{
+  margin-top: 5%;
+  margin-bottom: 1%;
+  background: rgba(255, 102, 0, 0.616);
+  max-width: 100%;
+  padding: 30px;
+  font-size: 25px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  width: 70%;
+  text-align: center;
+}
+
+.land-page form{
+  text-align: center;
+}
+
+/*-------------------------------------
+        NEW ANIMAL
+-------------------------------------*/
+.new-animal-cont{
+  display: flex;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: green url(/img/rabbit-1903016_1920.jpg);
+  background-size: cover;
+  background-position: top right;
+}
+.new-animal-cont h3{
+  font-family: Bodoni;
+  font-size: 30px;
+}
+
+
+.normal-species,
+.endangered-species {
+  max-width: 100%;
+  padding: 10% 0;
+  color: white;
+  text-align: center;
+}
+
+.redirect {
+  position: absolute;
+  top: 15px;
+  left: 30px;
+  display: inline-block;
+  color: rgb(255, 102, 0);
+  padding: 2px 20px;
+  text-transform: lowercase;
+  font-family: ennobled;
+  font-size: 30px;
+  color: white;
+  letter-spacing: 5px;
+  cursor: pointer;
+}
+.redirect:hover{
+  color: rgb(255, 102, 0);
+  box-shadow: 0 0 10px white;
+  border-radius: 30px;
+}
+.redirect::before {
+  content: "";
+  border-top: 5px solid white;
+  border-left: 5px solid white;
+  transform: rotate(-45deg);
+  height: 10px;
+  width: 10px;
+  display: block;
+  position: absolute;
+  left: -15px;
+  top: 11px;
+  transition: all 0.4s ease;
+}
+
+
+
+.redirect:hover::before {
+  left: -25px;
+  border-color: rgb(255, 102, 0);
+}
+
+form {
+  width: 400px;
+  left: 50%;
+  transform: translate(-50%);
+  position: relative;
+  max-width: 90%;
+  min-height: 100px;
+  background: rgba(0, 0, 0, 0.842);
+  padding: 10px;
+}
+
+form input[type=text],
+form select {
+  background: none;
+  border: none;
+  border: 1px solid rgba(233, 93, 0, 0.479);
+  padding: 10px;
+  width: 100%;
+  margin: 10px 0;
+  color: white;
+  outline-color: rgb(255, 94, 0);
+}
+form input[type=text]:focus{
+  background: black;
+}
+form select {
+  background: rgba(255, 255, 255, 0.11);
+  color: rgb(203, 73, 41);
+}
+
+::placeholder {
+  color: rgb(203, 73, 41);
+}
+
+
+/*------------------------------------
+              DASHBOARD
+------------------------------------=*/
+.dash {
+  min-height: 100vh;
+  background: rgb(0, 1, 53);
+  color: rgba(255, 255, 255, 0.616);
+}
+
+.dash h1 {
+  text-align: center;
+  font-family: Bodoni;
+  padding-top: 5px;
+}
+
+.dash h1 a {
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  font-size: 1.5em;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.726);
+
+}
+
+.dash h1 a:hover {
+  padding-left: 10px;
+  letter-spacing: 9px;
+}
+
+.dash h1 span {
+  font-size: 1.3em;
+  color: rgb(203, 73, 41);
+  letter-spacing: 3px;
+  margin-left: 40px;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.left-sec {
+  min-height: 100px;
+  width: 100%;
+  margin: 0 10px;
+}
+
+.left-sec h3 {
+  font-family: Bodoni;
+  text-align: center;
+  color: rgb(156, 156, 156);
+  padding: 10px;
+}
+
+.left-sec div {
+  border: 1px solid rgba(255, 255, 255, 0.288);
+  min-height: 60px;
+  margin: 2%;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.right-sec {
+  margin: 0 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-family: Ubuntu, sans-serif;
+}
+
+.right-sec>div {
+  border-top: 1px solid rgba(255, 255, 255, 0.322);
+  min-height: 200px;
+  margin: 2%;
+  width: 100%;
+}
+
+.right-sec p {
+  text-align: center;
+  font-size: 1em;
+
+
+}
+
+.right-sec p span {
+  display: inline-block;
+  font-size: 3em;
+  padding-top: 30px;
+  font-family: Bodoni;
+}
+
+.right-sec ul {
+  margin-top: 50px;
+  padding: 0 2%;
+}
+
+.right-sec li {
+  list-style-type: none;
+  display: block;
+  height: 2px;
+  background: rgb(117, 0, 45);
+  margin: 10px 0;
+  width: 0px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  animation: grow linear 2s 5;
+}
+
+.right-sec ul>li:nth-child(1) {
+
+  width: 30%;
+}
+
+.right-sec ul>li:nth-child(2) {
+  animation-delay: 1.5s;
+  width: 50%;
+}
+
+.right-sec ul>li:nth-child(3) {
+  animation-delay: 1s;
+  width: 10%;
+}
+
+.graph {
+  padding-top: 50px;
+}
+
+.graph div {
+  transition: all 1.5s ease-in-out;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+@keyframes grow {
+  0% {}
+
+  50% {
+    width: 100%;
+  }
+
+  90% {}
+}
+.recorded{
+  border-top: 1px solid rgba(255, 255, 255, 0.37);
+  min-height: 10vh;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.recorded h3{
+  width: 100%;
+}
+.recorded>div{
+  width: 500px;
+  max-width: 90%;
+}
+.recorded>div>div{
+  border: 1px solid rgba(255, 255, 255, 0.363);
+  min-height: 40px;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+/*----------------------------------------
+              SUCCESS
+-----------------------------------------*/
+.success-cont{
+  min-height: 100vh;
+  padding-top: 10%;
+  background: green url(/img/owl.jpg);
+  background-size: cover;
+  background-position: top right;
+}
+.success{
+  width: 70%;
+  max-width: 100%;
+  text-align: center;
+  background: rgb(203, 73, 41);
+  padding: 50px 30px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  overflow: hidden;
+  color: white;
+
+  animation: success 1.5s linear 1;
+}
+.success p{
+  font-size: 35px;
+
+}
+@keyframes success{
+  0%{width: 30px;height: 30px;transform: rotate(360deg);color:rgb(203, 73, 41);}
+  70%{width: 30px;height: 30px;transform: rotate(-660deg); }
+  90%{width: 70%;height: 0;color:rgb(203, 73, 41);}
+}
+
+
+@media only screen and (min-width: 900px) {
+  .left-sec {
+    width: 40%;
+    min-height: 90vh;
+    border-right: 1px solid rgba(255, 255, 255, 0.445);
+    margin: 0;
+  }
+
+  .right-sec {
+    width: 58%;
+    min-height: 90vh;
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 1050px) {
+  form {
+    width: 550px;
+    padding: 20px;
+  }
+  .left-sec {
+    width: 30%;
+    min-height: 90vh;
+    max-height: 95vh;
+    overflow: auto;
+  }
+
+  .right-sec {
+    width: 68%;
+    min-height: 90vh;
+  }
+
+  .right-sec>div {
+    border: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.322);
+    margin: 2% 0;
+    width: 33%;
+  }
+
+  .right-sec>div:nth-child(3) {
+    border: none;
+  }
+
+  .right-sec>div:last-child {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.322);
+    width: 100%;
+    margin: 2%;
+  }
+}

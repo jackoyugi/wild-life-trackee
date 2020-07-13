@@ -60,10 +60,11 @@ public class App {
 
         post("/new-endangered", (req, res)->{
             Map<String, Object> model = new HashMap<>();
+            int id = Integer.parseInt(req.queryParams(""));
             String name = req.queryParams("name");
-            String health = req.queryParams("health");
-            int age = Integer.parseInt(req.queryParams("age"));
-            EndangeredAnimal newEndangered = new EndangeredAnimal(name, health, age);
+            String status = req.queryParams("status");
+            String old = req.queryParams("old");
+            EndangeredAnimal newEndangered = new EndangeredAnimal(1, name, status, old);
             model.put("newEndangered", newEndangered);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
