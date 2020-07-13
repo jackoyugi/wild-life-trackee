@@ -1,0 +1,30 @@
+{{#partial "content"}}
+    <div id="home-page">
+        <div class="landing-page" id="land-page">
+            <nav>
+                <a href="/">Welcome</a>
+                <a href="/new-animal">New Animal</a>
+                <a href="/dashboard">Dashboard</a>
+            </nav>
+            <h1>Wildlife Tracker</h1>
+            <p class="message"> If you sight an Animal kindly record the Animal</p>
+            <form action="/new-sighting" method="post">
+                <select name="selectAnimal" required>
+                    <option value="">Choose Animal</option>
+                    <option value="1">Owl</option>
+                    {{#each all}}
+                        <option value="{{id}}">{{name}}</option>
+                    {{/each}}
+                    {{#each all}}
+                        <option value="{{id}}">{{name}}</option>
+                    {{/each}}
+                </select>
+                <input type="text" name="location" id="" placeholder="Location" required>
+                <input type="text" name="ranger" id="" placeholder="Ranger" required>
+                <input type="submit" class="btn btn-light">
+            </form>
+            <a href="/new_animal"></a>
+        </div>
+    </div>
+{{/partial}}
+{{> layout.hbs}}

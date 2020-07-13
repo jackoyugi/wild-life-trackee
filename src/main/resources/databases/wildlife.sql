@@ -20,3 +20,8 @@ CREATE TABLE IF NOT EXISTS endangeredanimals(
     status VARCHAR,
     old VARCHAR,
 );
+CREATE TABLE IF NOT EXISTS eanimals(
+    id SERIAL PRIMARY KEY,
+    eanimalid INTEGER,
+    animalid INTEGER,
+);

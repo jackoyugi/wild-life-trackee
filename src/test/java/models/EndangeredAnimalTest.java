@@ -53,29 +53,26 @@ public class EndangeredAnimalTest {
         assertEquals(true, EndangeredAnimal.all().get(0).equals(firstEndanger));
         assertEquals(true, EndangeredAnimal.all().get(1).equals(secondEndanger));
     }
-    @Test
-    public void addAnimal_addsAnimalToEndangeredAnimal(){
-        EndangeredAnimal testEndanger = new EndangeredAnimal(1, "chiew", "weak", "young");
-        testEndanger.save();
-        Animal testAnimal = new Animal("kwach", 1, "stable");
-        testAnimal.save();
-        testEndanger.addAnimal(testAnimal);
-        Animal savedAnimal = testEndanger.getAnimals().get(0);
-        assertTrue(testAnimal.equals(savedAnimal));
-    }
-    @Test
-    public void getAnimals_returnsAllAnimals_list(){
-        EndangeredAnimal testEndanger = new EndangeredAnimal(1, "chiew", "weak", "young");
-        testEndanger.save();
-        Animal testAnimal = new Animal ("kwach", 1, "stable");
-        testAnimal.save();
-        testEndanger.addAnimal(testAnimal);
-        List savedAnimals = testEndanger.getAnimals();
-        assertEquals(savedAnimals.size(), 1);
-    }
-
-
-
+//    @Test
+//    public void addAnimal_addsAnimalToEndangeredAnimal(){
+//        EndangeredAnimal testEndanger = new EndangeredAnimal(1, "chiew", "weak", "young");
+//        testEndanger.save();
+//        Animal testAnimal = new Animal("kwach", 1, "stable");
+//        testAnimal.save();
+//        testEndanger.addAnimal(testAnimal);
+//        Animal savedAnimal = testEndanger.getAnimals().get(0);
+//        assertTrue(testAnimal.equals(savedAnimal));
+//    }
+//    @Test
+//    public void getAnimals_returnsAllAnimals_list(){
+//        EndangeredAnimal testEndanger = new EndangeredAnimal(1, "chiew", "weak", "young");
+//        testEndanger.save();
+//        Animal testAnimal = new Animal ("kwach", 1, "stable");
+//        testAnimal.save();
+//        testEndanger.addAnimal(testAnimal);
+//        List savedAnimals = testEndanger.getAnimals();
+//        assertEquals(savedAnimals.size(), 1);
+//    }
 
 
 }

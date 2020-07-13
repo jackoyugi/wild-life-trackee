@@ -84,22 +84,22 @@ public class Animal {
                     .executeAndFetch(Sighting.class);
         }
     }
-    public List<EndangeredAnimal> getEndangeredAnimals(){
-        try (Connection con = Database.sql2o.open()){
-            String joinQuery = "SELECT endangeredanimal_id FROM endangeredanimals_animals WHERE animal_id = :animal_id";
-            List<Integer> endangeredanimalIds = con.createQuery(joinQuery)
-                    .addParameter("animal_id", this.getId())
-                    .executeAndFetch(Integer.class);
-            List<EndangeredAnimal> endangeredAnimals = new ArrayList<EndangeredAnimal>();
-            for (Integer endangeredanimalId : endangeredanimalIds){
-                String endangeredAnimalQuery = "SELECT * FROM endangeredanimals WHERE id = :animalId";
-                EndangeredAnimal endangeredAnimal = con.createQuery(endangeredAnimalQuery)
-                        .addParameter("endangeredanimalId", endangeredanimalId)
-                        .executeAndFetchFirst(EndangeredAnimal.class);
-                endangeredAnimal.add(endangeredAnimal);
-            }
-            return endangeredAnimals;
-        }
-    }
+//    public List<EndangeredAnimal> getEndangeredAnimals(){
+//        try (Connection con = Database.sql2o.open()){
+//            String joinQuery = "SELECT eanimalid FROM eanimals_animals WHERE animalid = :animalid";
+//            List<Integer> endangeredanimalIds = con.createQuery(joinQuery)
+//                    .addParameter("animal_id", this.getId())
+//                    .executeAndFetch(Integer.class);
+//            List<EndangeredAnimal> endangeredAnimals = new ArrayList<EndangeredAnimal>();
+//            for (Integer endangeredanimalId : endangeredanimalIds){
+//                String endangeredAnimalQuery = "SELECT * FROM endangeredanimals WHERE id = :animalId";
+//                EndangeredAnimal endangeredAnimal = con.createQuery(endangeredAnimalQuery)
+//                        .addParameter("endangeredanimalId", endangeredanimalId)
+//                        .executeAndFetchFirst(EndangeredAnimal.class);
+//                endangeredAnimal.add(endangeredAnimal);
+//            }
+//            return endangeredAnimals;
+//        }
+//    }
 
 }

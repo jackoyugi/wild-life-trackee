@@ -77,20 +77,20 @@ public class EndangeredAnimal {
     }
     public void addAnimal(Animal animal){
         try (Connection con = Database.sql2o.open()){
-            String sql = "INSERT INTO endangredanimals_animals (endangeredanimal_id, animal_id) VALUES (:endangeredanimal_id, :animal_id)";
+            String sql = "INSERT INTO eanimals(eanimalid, animalid) VALUES (:eanimalid, :animalid)";
             con.createQuery(sql)
-                    .addParameter("endangeredanimal_id", this.getId())
-                    .addParameter("animal_id", this.getId())
+                    .addParameter("eanimalid", this.getId())
+                    .addParameter("animalid", this.getId())
                     .executeUpdate();
 
 
         }
     }
-    public List<Animal> getAnimals(){
+    public  List<Animal> getAnimals(){
         try(Connection con = Database.sql2o.open()){
-            String joinQuery = "SELECT animal_id FROM endangeredanimals_animals WHERE endangeredanimals_id = :endangeredanimals_id";
+            String joinQuery = "SELECT animalid FROM eanimals WHERE eanimalid = :eanimalid";
             List <Integer> animalIds = con.createQuery(joinQuery)
-                    .addParameter("endangeredanimals_id", this.getId())
+                    .addParameter("eanimalid", this.getId())
                     .executeAndFetch(Integer.class);
             List<Animal> animals = new ArrayList<Animal>();
             for (Integer animalId : animalIds){
