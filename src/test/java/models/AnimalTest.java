@@ -18,7 +18,7 @@ public class AnimalTest {
     @Test
     public void getAnimal_age_InstantiatesWithAge_Minus(){
         Animal testAnimal = new Animal( "kwach", 1, "stable");
-        assertEquals("minus", testAnimal.getAnimal_age());
+        assertEquals(1, testAnimal.getAnimal_age());
     }
 
     @Test

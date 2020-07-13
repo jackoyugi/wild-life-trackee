@@ -2,6 +2,7 @@ package models;
 
 import org.sql2o.Connection;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 
@@ -74,4 +75,12 @@ public class Animal {
         }
     }
 
+    public List< Sighting> getSightings() {
+        try(Connection con = Database.sql2o.open()){
+            String sql = "SELECT * FROM sightings where animalId=:id";
+            return con.createQuery(sql)
+                    .addParameter("id", this.id)
+                    .executeAndFetch(Sighting.class);
+        }
+    }
 }

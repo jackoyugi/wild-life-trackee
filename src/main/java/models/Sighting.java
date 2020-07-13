@@ -1,6 +1,10 @@
 package models;
 
+import org.sql2o.Connection;
+
 import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.Objects;
 
 public class Sighting {
     private String location;
@@ -15,12 +19,33 @@ public class Sighting {
         this.ranger=ranger;
     }
 
+    public static List< Sighting> all() {
+        String sql = "SELECT * FROM sightings";
+        try(Connection con = Database.sql2o.open()){
+            return con.createQuery(sql).executeAndFetch(Sighting.class);
+        }
+    }
+
+    public static Sighting find(int id) {
+        try(Connection con = Database.sql2o.open()){
+            String sql = "SELECT * FROM sightings where id=:id";
+            Sighting sighting = con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeAndFetchFirst(Sighting.class);
+            return sighting;
+        }
+    }
+
     public String getLocation() {
         return location;
     }
 
-    public int getId() {
+    public int getAnimalId() {
         return animalId;
+    }
+
+    public int getId(){
+        return id;
     }
 
     public String getRanger() {
@@ -33,8 +58,24 @@ public class Sighting {
         }else{
             Sighting newSighting = (Sighting) otherSighting;
             return this.getLocation().equals(newSighting.getLocation())&&
-                    this.getId()==newSighting.getId()&&
+                    this.getAnimalId()==newSighting.getAnimalId()&&
                     this.getRanger().equals(newSighting.getRanger());
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(location, ranger, animalId, id, time);
+    }
+    public void save(){
+        try(Connection con = Database.sql2o.open()){
+            String sql = "INSERT INTO sightings(animalId, location, ranger)VALUES(:animalId, :location, :ranger);";
+            this.id = (int) con.createQuery(sql, true)
+                    .addParameter("animalId", this.animalId)
+                    .addParameter("location", this.location)
+                    .addParameter("ranger", this.ranger)
+                    .executeUpdate()
+                    .getKey();
         }
     }
 }
