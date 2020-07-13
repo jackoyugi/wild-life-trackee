@@ -12,10 +12,10 @@
                 <select name="selectAnimal" required>
                     <option value="">Choose Animal</option>
                     <option value="1">Owl</option>
-                    {{#each all}}
+                    {{#each allAnimals}}
                         <option value="{{id}}">{{name}}</option>
                     {{/each}}
-                    {{#each all}}
+                    {{#each allEndangered}}
                         <option value="{{id}}">{{name}}</option>
                     {{/each}}
                 </select>
