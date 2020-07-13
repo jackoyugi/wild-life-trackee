@@ -1,0 +1,15 @@
+{{#partial "content"}}
+    <div class="sucess-cont">
+        <a href="/" class="redirect">Home Page</a>
+        <div class="sucess">
+            {{#if new Sighting}}
+                <p>Success!!!!!!!! Animal Seen</p>
+                <p>Location: {{newSighting.location}}</p>
+            {{else}}
+                <p>{{new.ranger}}<br> Animal Added Successfully!</p>
+            {{/if}}
+            <a href="/dashboard" class="btn btn -success">View in dashboard</a>
+        </div>
+    </div>
+{{/partial}}
+{{> layout.hbs}}

@@ -37,6 +37,16 @@ public class App {
             return new ModelAndView(model, "new-animal.hbs");
         },  new HandlebarsTemplateEngine());
 
+        post("/new-animal", (req, res)->{
+            Map<String, Object> model = new HashMap<>();
+            int age = Integer.parseInt(req.queryParams("age"));
+            String name = req.queryParams("name");
+            String health = req.queryParams("health");
+            Animal newAnimal = new Animal(name, age, health);
+            newAnimal.save();
+            return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+
 
     }
 }
