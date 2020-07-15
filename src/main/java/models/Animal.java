@@ -8,15 +8,18 @@ import java.util.List;
 import java.util.Objects;
 
 public class Animal {
-    private String name;
-    private String health;
-    private int age;
-    private int id;
+    public String name;
+    public String health;
+    public int age;
+    public int id;
+    public static final String type="animal";
+
 
     public Animal(String name, int age, String health ){
         this.name = name;
         this.age = age;
         this.health = health;
+
     }
     public static List<Animal> all() {
         String sql = "SELECT * FROM animals";

@@ -89,6 +89,14 @@ public class SightingTest {
         assertTrue(testAnimal.getSightings().containsAll(Arrays.asList(sightings)));
 
     }
+    @Test
+    public void delete_deleteSighting_true(){
+        Sighting testSighting = new Sighting(1, "kodera", "jackwonder");
+        testSighting.save();
+        int sightingId = testSighting.getId();
+        testSighting.delete();
+        assertEquals(null, Sighting.find(sightingId));
+    }
 
 
 }
